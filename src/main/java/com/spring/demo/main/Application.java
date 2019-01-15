@@ -1,5 +1,7 @@
 package com.spring.demo.main;
 
+import com.spring.demo.customtag.User;
+import com.spring.demo.label.TestChangeMethod;
 import com.spring.demo.service.AxeService;
 import com.spring.demo.service.impl.StoneAxeServiceImpl;
 import org.springframework.context.ApplicationContext;
@@ -22,6 +24,13 @@ public class Application {
         AxeService p = ctx.getBean("stoneAxeService", StoneAxeServiceImpl.class);
         String result = p.chop();
         System.out.println("=====" + result);
+
+        TestChangeMethod testChangeMethod = ctx.getBean("testChangeMethod", TestChangeMethod.class);
+        testChangeMethod.changeMe();
+
+        User user = ctx.getBean("testbean", User.class);
+        System.out.println(user.getId() + ":" + user.getEmail());
+
     }
 
 }

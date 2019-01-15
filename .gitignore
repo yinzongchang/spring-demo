@@ -17,7 +17,14 @@ target/
 *.iml
 *.iws
 
+# netbeans ignore
+nbproject/
+META-INF/
+nbactions.xml
+nb-configuration.xml
+
 # temp ignore
+logs/
 *.log
 *.cache
 *.diff
@@ -30,4 +37,3 @@ target/
 # system ignore
 .DS_Store
 Thumbs.db
-/logs

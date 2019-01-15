@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:myname="http://www.yinzongchang.com/schema"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.yinzongchang.com/schema http://www.yinzongchang.com/schema/customer-1.0.xsd">
 
 
     <bean id="stoneAxeService" class="com.spring.demo.service.impl.StoneAxeServiceImpl"/>
+
+    <bean id="testChangeMethod" class="com.spring.demo.label.TestChangeMethod">
+        <replaced-method name="changeMe" replacer="testMethodReplacer"/>
+    </bean>
+
+    <bean id="testMethodReplacer" class="com.spring.demo.label.TestMethodReplacer"/>
+
+    <myname:user id="testbean" userName="aaa" email="bbb"></myname:user>
 
 </beans>
